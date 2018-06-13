@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const {Comment} = require('../models/Image');
+const {Comment, Image} = require('../models/Image');
 
 module.exports = {
     // index: (req, res) => {
