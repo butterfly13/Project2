@@ -1,2 +1,17 @@
 <h1>Welcome to Travel and Share</h1>
 <p>This is a place where you share places you have been visited so that other people can experience from you pictures. At the same time, you can also learn from others</p>
+
+<section class="images">
+    {{#each images }}
+        <div class="card">
+            <div class="card-content">
+                {{!-- <a href="/image/{{id}}" class="card-title">{{image}}</a> --}}
+                <img src="/image/{{id}}" class="card-title" alt="image">
+            </div>
+            <div class="card-action">
+                <a href="/user/{{author.id}}">{{author.userName}}</a>
+                {{!-- <span>{{dateCreated}}</span> --}}
+            </div>
+        </div>
+    {{/each}}
+</section>

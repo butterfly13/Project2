@@ -2,8 +2,16 @@
 const { Comment, Image  } = require('../models/Image');
 
 module.exports = {
+    //res.send('helloworld')
     index: (req, res) => {
-        res.render('app/index')
+        Image.find({})
+            .sort({ dateCreated: -1 })
+            .limit(10)
+            .populate('author')
+            .then(images => {
+               // res.send('Hello World');
+                res.render('app/index', { images })
+            })    
     }
 }
 

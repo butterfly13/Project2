@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schedma;
+const mongoose = require('../db/connection');
+const Schema = mongoose.Schema;
 
 const User = new Schema({
     userName: {type: String, require: true },
-    passWord: {type: String, require: true},
+    password: {type: String, require: true},
     dateCreated: {
         type: Date,
-        default: now.Date()
+        default: Date.now()
     },
-    comments: [
+    images: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Comment'
+            ref: 'Image'
         }
     ]
 });

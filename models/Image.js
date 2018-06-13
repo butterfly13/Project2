@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
+
+const mongoose = require('../db/connection');
 const Schema = mongoose.Schema;
 
 const Comment = new Schema({
     content: String,
     dateCreated: {
         type: Date,
-        default: now.Date()
+        default: Date.now()
     },
     author: [
         {
@@ -16,13 +17,13 @@ const Comment = new Schema({
 });
 
 const Image = new Schema({
-    content: url,
+    image: String,
     description: String,
-    dateCreated: {
-        type: Date,
-        default: now.Date()
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
-    comments: [comment]
+    comments: [Comment]
 });
 
 module.exports = {
