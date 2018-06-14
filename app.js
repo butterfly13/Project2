@@ -34,5 +34,5 @@ app.use(require('./routes/index.js'))
 
 app.set("port", process.env.PORT || 4000);
 app.listen(app.get("port"), () => {
-    console.log('Listen on Port 3000');
+    console.log('Listen on Port 4000');
 })
