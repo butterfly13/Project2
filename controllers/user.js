@@ -1,15 +1,21 @@
 const User = require('../models/User');
 const {Comment, Image} = require('../models/Image');
+const passport = require('passport');
 
 module.exports = {
     // index: (req, res) => {
     //     res.render('user/show');
     // },
-    new: (req, res) => {
-        res.render('user/new');
+    signin: (req, res) => {
+        res.render('user/signin', {message: req.flash('signinMessage')});
     },
-    create: (req, res) => {
-        res.render('user/create');
+    createSignin: (req, res) => {
+        const signin = passport.authenticate('local-signin', {
+            successRedirect: '/',
+            failureRedirect: '/signin',
+            failureFlash: true
+        });
+        return signin(req, res);
     },
     show: (req, res) => {
         res.render('user/show');

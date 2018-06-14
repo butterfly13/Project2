@@ -6,12 +6,42 @@
          <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     </head>
-    <body>
-        {{{body}}}
 
+    
+    <body>
+
+        <nav>
+            <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Travel & Share</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {{#if currentUser}}
+                    <li><a href="/user/{{currentUsr.id}}">Hi {{currentUser.userName}}</a></li>
+                     <li><a href="#">Sign Out</a></li>
+                {{else}}
+                    <li><a href="/user/signin">Sign In</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                {{/if}}
+            </ul>
+            </div>
+        </nav>
+        <main class= "container">
+            
+             {{{body}}}
+
+             
+
+        </main> 
+        {{!-- end .container --}}
+       
         <footer>
-            <p>share image application</p>
+                <p>share image application</p>
         </footer>
+
+    <!--jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        
           <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     </body>

@@ -15,3 +15,9 @@ module.exports = {
     }
 }
 
+// module.exports = {
+//     index: (req, res) => {
+//         res.render('image/index');
+//     }
+// }
+

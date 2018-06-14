@@ -3,7 +3,17 @@ const {Image, Comment} = require('../models/Image');
 
 module.exports = {
     index: (req, res) => {
-        res.render('image/index');
+        Image.find({})
+        .sort({ dateCreated: -1 })
+        .limit(10)
+        .populate('author')
+        .then(images => {
+           //res.send('Hello World');
+            res.render('image/index', { images })
+        })
+
+
+        //res.render('image/index');
     },
     show: (req, res) => {
         res.render('image/show');
