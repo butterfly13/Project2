@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // to set up view engine
 app.set('view engine', 'hbs')
 
-app.use(session({secret: 'Project2 express'}));
-app.use(flash());
+// app.use(session({secret: 'Project2 express'}));
+// app.use(flash());
 
 require('./config/passport')(passport);
 app.use(passport.initialize());
