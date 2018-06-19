@@ -1,9 +1,10 @@
 const mongoose = require('../db/connection');
-const bcrypt = require('bcrypt-nodejs');
+//const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema;
 
 const User = new Schema({
-    userName: {type: String, require: true },
+    username: {type: String, require: true },
     password: {type: String, require: true},
     email: {type: String, require},
     dateCreated: {

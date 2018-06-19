@@ -11,14 +11,17 @@ const app = express();
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-
-
 // to set up view engine
 app.set('view engine', 'hbs')
+// set up static folder
+ app.use(express.static('public'))
 
-// app.use(session({secret: 'Project2 express'}));
-// app.use(flash());
+app.use(session({
+  secret: 'Project2 express',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(flash());
 
 require('./config/passport')(passport);
 app.use(passport.initialize());

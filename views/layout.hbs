@@ -17,11 +17,11 @@
             <a href="#" class="brand-logo">Travel & Share</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {{#if currentUser}}
-                    <li><a href="/user/{{currentUsr.id}}">Hi {{currentUser.userName}}</a></li>
-                     <li><a href="#">Sign Out</a></li>
+                    <li><a href="/user/{{currentUser.id}}">Hi {{currentUser.userName}}</a></li>
+                     <li><a href="/user/signout">Sign Out</a></li>
                 {{else}}
                     <li><a href="/user/signin">Sign In</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="/user/signup">Sign Up</a></li>
                 {{/if}}
             </ul>
             </div>

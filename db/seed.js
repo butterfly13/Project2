@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const { Image } = require('../models/Image');
+const bcrypt = require('bcrypt')
 
 const createPassword = password =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(8), null); // ???
@@ -7,14 +8,14 @@ const createPassword = password =>
 User.find({}).remove(() => {
   Image.find({}).remove(() => {
     User.create({
-      userName: 'generalAssembly',
-      password: 'password1234',
+      username: 'generalAssembly',
+      password: createPassword('password1234'),
       email: 'test@test.com'
     })
       .then(user => {
         [
           Image.create({
-            image: 'https://source.unsplash.com/XWW746i6WoM/300x300',
+            image: 'https://source.unsplash.com/XWW746i6WoM',
             description: 'Washington, D.C',
             author: user._id
           }) // end image.create(18)
@@ -22,7 +23,7 @@ User.find({}).remove(() => {
               user.images.push(image);
             }), // end image(21)
           Image.create({
-            image: 'https://source.unsplash.com/kK50btqF73k/300x300',
+            image: 'https://source.unsplash.com/kK50btqF73k',
             description: 'Seattle, Washington state',
             author: user._id
           }) // end image.create(24)
