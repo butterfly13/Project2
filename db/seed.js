@@ -13,6 +13,7 @@ User.find({}).remove(() => {
       email: 'test@test.com'
     })
       .then(user => {
+        Promise.all(
         [
           Image.create({
             image: 'https://source.unsplash.com/XWW746i6WoM',
@@ -30,7 +31,7 @@ User.find({}).remove(() => {
             .then(image => {
               user.images.push(image);
             }) // end image(29)
-        ]
+        ])
       //})
         .then(() => {
             user.save(err => console.err(err));

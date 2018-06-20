@@ -3,14 +3,15 @@
     <h1>Welcome {{currentUser.username}}</h1>
     {{currentUser.username}}
     {{currentUser.email}}
-     {{#if currentUser}}
-        {{#each images}}
+     {{#if currentUser.images}}
+        {{#each currentUser.images}}
             <li>
-                 <img src="user/{{CurrentUser.images}}">
+                 <img src="{{currentUser.images}}">
             </li>
             
         {{/each}}
      {{/if}}
+
    
     <div class="row ">
     {{#each user }}

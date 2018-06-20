@@ -7,13 +7,14 @@
     </div>
   </div>
   
-  
   {{#if message}}
-    
+
     <div class="row" id="alert_box">
       <div class="col s6">
         <div class="col s12">
-           <p class="alert">{{ message }}</p>
+          <div class="card-panel red lighten-5">
+            <span class="red-text text-darken-2">{{ message }}</span>
+          </div>
         </div>
       </div>
     </div>

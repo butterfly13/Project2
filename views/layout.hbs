@@ -17,7 +17,8 @@
             <a href="#" class="brand-logo">Travel & Share</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 {{#if currentUser}}
-                    <li><a href="/user/{{currentUser.id}}">Hi {{currentUser.username}}</a></li>
+                    {{!-- <li><a href="/user/{{currentUser.id}}">Hi {{currentUser.username}}</a></li> --}}
+                    <li><a href="/user/index">Hi {{currentUser.username}}</a></li>
                      <li><a href="/user/signout">Sign Out</a></li>
                 {{else}}
                     <li><a href="/user/signin">Sign In</a></li>
@@ -45,3 +46,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     </body>
 </html>
+
