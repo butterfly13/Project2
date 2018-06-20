@@ -1,0 +1,32 @@
+
+<section class="user">
+    <h1>Welcome {{currentUser.username}}</h1>
+    {{currentUser.username}}
+    {{currentUser.email}}
+     {{#if currentUser}}
+        {{#each images}}
+            <li>
+                 <img src="user/{{CurrentUser.images}}">
+            </li>
+            
+        {{/each}}
+     {{/if}}
+   
+    <div class="row ">
+    {{#each user }}
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-content">
+               <img src="{{user.images}}" class="card-title" alt="image">
+            </div>
+            <div class="card-action">
+    
+                <p>{{currentUser.images.description}}</p>
+            
+            </div>
+
+        </div>
+        </div>
+    {{/each}}
+    </div>
+</section>

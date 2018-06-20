@@ -40,14 +40,21 @@ module.exports = function (passport) {
           } else {
             // no email registered with this username
             // create a new user
+            //var email = req.body.email
             var newUser = new User()
             newUser.username = username
+           //newUser.email = email
             newUser.password = newUser.encrypt(password)
-
-            newUser.save(function(err){
+            
+            User.create(newUser, function(err, user){
               if(err) throw err
-              return callback(null, newUser)
-            }) // end newUser.save
+              console.log(user)
+            })
+
+            // newUser.save(function(err){
+            //   if(err) throw err
+            //   return callback(null, newUser)
+            // }) // end newUser.save
             
           } // end if user with this username
         }) // end findOne

@@ -6,6 +6,22 @@ module.exports = {
     // index: (req, res) => {
     //     res.render('user/show');
     // },
+
+    index: (req, res) => {
+        User.findOne({_id: req.params.id})
+            .populate({
+                
+                    path: '_id.images',
+                    // options: {dateCreated: -1}
+
+                
+            })
+            .then(user => {
+                res.render('user/index', { user })
+            })
+        
+    },
+
     signup: (req, res) => {    
         res.render('user/signup', {message: req.flash('signupMessage')});
         
@@ -13,7 +29,7 @@ module.exports = {
     createSignup: (req, res) => {
         const signupStrategy = passport.authenticate('local-signup', {
             successRedirect: '/',
-            failureRedirect: '/signup',
+            failureRedirect: 'signup',
             failureFlash: true
         }); // end signup
         return signupStrategy(req, res);
@@ -22,10 +38,9 @@ module.exports = {
         res.render('user/signin', {message: req.flash('signinMessage')});
     },
     createSignin: (req, res) => {
-        console.log('in controller action')
         const signinStrategy = passport.authenticate('local-signin', {
             //successRedirect: '/',
-            successRedirect: '/',
+            successRedirect: 'index',
             failureRedirect: 'signin',
             failureFlash: true
         });
@@ -33,10 +48,25 @@ module.exports = {
     },
 
     signout: (req, res) => {
-        console.log('here')
+        console.log('logout')
         req.logout()
         res.redirect('/')
     },
+
+    // index: (req, res) => {
+    //     User.findOne({_id: req.params.id})
+    //         .populate({
+                
+    //                 path: 'Image',
+    //                 options: {dateCreated: -1}
+
+                
+    //         })
+    //         .then(user => {
+    //             res.render('user/index', { user })
+    //         })
+        
+    // },
    
     show: (req, res) => {
         res.render('user/show');
