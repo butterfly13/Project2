@@ -29,7 +29,7 @@
                     {{#if currentUser}}
                         {{!-- <li><a href="/user/{{currentUser.id}}">Hi {{currentUser.username}}</a></li> --}}
                         <li><a href="/user/index">Hi {{currentUser.username}}</a></li>
-                        <li><a href="">Profile</a></li>
+                        <li><a href="/user/{{currentUser.id}}">Profile</a></li>
                         <li><a href="/user/signout">Sign Out</a></li>
                     {{else}}
                         <li><a href="/user/signin">Sign In</a></li>

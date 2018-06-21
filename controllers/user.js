@@ -3,9 +3,25 @@ const {Comment, Image} = require('../models/Image');
 const passport = require('passport');
 
 module.exports = {
-    // index: (req, res) => {
-    //     res.render('user/show');
-    // },
+
+    // show user profile that will display all the images from that usr
+    show: (req, res) => {
+        User.findOne({_id: req.params.id})
+        .populate({
+                
+                        path: 'images'
+        //     //             // options: {dateCreated: -1}
+    
+                    
+                })
+        .then((user) => {
+            res.render('user/show', {user});
+
+
+        });
+
+    },
+    
 //  for temporaly: will need to work on show all the images from single user
 // after user sign in
     index: (req, res) => {
@@ -19,33 +35,6 @@ module.exports = {
           })
         },
 
-    // index: (req, res) => {
-    //     console.log('from user controllers')
-    //     console.log(res.locals.currentUser)
-    //     console.log('==================')
-        
-        // console.log(res.locals.currentUser.username)
-        // User.findOne({_id: req.params.id})
-        //     .populate({
-                
-        //             path: 'images'
-        //             // options: {dateCreated: -1}
-
-                
-        //     })
-            
-        //     .then(user => {
-        //     //    const newUsername = res.locals.currentUser.username
-        //     //    console.log(newUsername)
-        //         res.render('user/index', { user})
-
-                
-        //     })
-    //         console.log('after sigin success')
-    //         const newUsername = res.locals.currentUser.images
-    //         console.log(newUsername)
-    //         res.render('user/index', {newUsername})
-    // },
     // GET Sign up
     signup: (req, res) => {    
         res.render('user/signup', {message: req.flash('signupMessage')});
@@ -78,29 +67,7 @@ module.exports = {
         console.log('logout')
         req.logout()
         res.redirect('/')
-    },
-
-    // index: (req, res) => {
-    //     User.findOne({_id: req.params.id})
-    //         .populate({
-                
-    //                 path: 'Image',
-    //                 options: {dateCreated: -1}
-
-                
-    //         })
-    //         .then(user => {
-    //             res.render('user/index', { user })
-    //         })
-        
-    // },
-   
-    show: (req, res) => {
-        let id = req.params.id
-        User.findById(id)
-        .then((user) => {
-            res.render('user/show', {user});
-        })
-        
     }
+
+
 }

@@ -1,17 +1,21 @@
 
-<h1>Welcome to Travel Guide</h1>
-<p>This is a place where you share places you have been visited so that other people can experience from you pictures. At the same time, you can also learn from others</p>
- {{!-- link to upload new image --}}
-   
+<div class="dashboard">
+    <h1>Welcome to Travel Guide</h1>
+    <p>This is a place where you share places you have been visited so that other people can experience from you pictures. At the same time, you can also learn from others</p>
+    {{!-- link to upload new image --}}
+    <a class="waves-effect waves-light btn" href="../image/new">upload new image</a>
+</div>
     
-<a class="waves-effect waves-light btn" href="../image/new">upload new image</a>
+{{!-- <a class="waves-effect waves-light btn" href="../image/new">upload new image</a> --}}
 <section class="images">
     <div class="row ">
     {{#each images }}
     <div class="col s12 m4">
         <div class="card small">
             <div class="card-image">
-                <a href="/image/{{id}}" ><img src="{{image}}" alt="image"></a>  
+                <a href="/image/{{id}}" >
+                    <img src="{{image}}" alt="image">
+                </a>  
             </div>
             <div class="card-content">
                <span class="card-title">{{description}}</span>

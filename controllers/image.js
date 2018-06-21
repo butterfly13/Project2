@@ -7,8 +7,10 @@ module.exports = {
   // show all images
   index: (req, res) => {
     Image.find({})
-      .sort({ dateCreated: -1 })
       .limit(10)
+      .sort({$natural: -1})
+      //.sort({ dateCreated: -1 })
+      // .limit(10)
       .populate('author')
       .then(images => {
         // res.send('Hello World');
@@ -38,8 +40,6 @@ module.exports = {
     // console.log("====================")
     const url = req.body.url
     const desc = req.body.desc
-    // console.log('URL')
-    // console.log(url)
     const author = res.locals.currentUser
     // Create new image
     Image.create({
@@ -52,6 +52,7 @@ module.exports = {
       req.user.save(err => {
 
         res.redirect(`/user/index`)
+        
       })
     })
     

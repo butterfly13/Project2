@@ -5,10 +5,12 @@ const cookieParser   = require('cookie-parser');
 const session        = require('express-session');
 const passport       = require('passport');
 const methodOverride = require('method-override');
-const validator      = require('express-validator')
+const validator      = require('express-validator');
+const hbs             = require('hbs');
 
 const app = express();
 
+hbs.registerPartials(__dirname + "/views/partials");
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json())

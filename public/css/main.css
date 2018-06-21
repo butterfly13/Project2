@@ -15,7 +15,9 @@
   }
 
   
-
+.container {
+    padding-top: 50px;
+}
  
 
   nav{
@@ -23,23 +25,17 @@
       padding-right: 30px;
   }
 
-  /* .card-content img {
-      width: 290px;
-      height: 300px;
-      position: relative;
-     
-  } */
+  div.dashboard {
+      background-color: #c2f0f0;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      
+  }
 
-
-/* 
-  div.card-content {
-      width: 33%;
-     
-  } */
-
-  /* .display-author {
-      padding-top: 40px;
-  } */
+  div.dashboard p {
+      text-align: left;
+  }
 
   div.card {
       padding: 0;

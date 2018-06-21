@@ -1,0 +1,18 @@
+<section>
+    <div class="dashboard">
+     <h3>{{user.username}}'s Dashboard:</h3>
+    </div>
+    <div class="row">
+        
+        {{#if user.images}}
+        
+            {{#each user.images }}
+            
+            {{> 'image'}}
+            {{/each}}
+     
+    </div>
+    {{else}}
+        <p>No images</p>
+    {{/if}}
+</section>
