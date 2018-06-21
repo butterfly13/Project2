@@ -2,31 +2,45 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Travel & Share</title>
+        <title>Travel Guide</title>
         <!--materiailize to include icond -->
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+         {{!-- app css --}}
+         <link rel="stylesheet" href="../css/main.css">
          <!-- Compiled and minified CSS -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     </head>
 
     
     <body>
+        
 
-        <nav>
-            <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Travel & Share</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {{#if currentUser}}
-                    {{!-- <li><a href="/user/{{currentUser.id}}">Hi {{currentUser.username}}</a></li> --}}
-                    <li><a href="/user/index">Hi {{currentUser.username}}</a></li>
-                     <li><a href="/user/signout">Sign Out</a></li>
-                {{else}}
-                    <li><a href="/user/signin">Sign In</a></li>
-                    <li><a href="/user/signup">Sign Up</a></li>
-                {{/if}}
-            </ul>
-            </div>
-        </nav>
+
+       <header>
+
+       
+
+            <nav>
+            
+                <div class="nav-wrapper">
+                <a href="" class="brand-logo">Travel Guide</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    {{#if currentUser}}
+                        {{!-- <li><a href="/user/{{currentUser.id}}">Hi {{currentUser.username}}</a></li> --}}
+                        <li><a href="/user/index">Hi {{currentUser.username}}</a></li>
+                        <li><a href="">Profile</a></li>
+                        <li><a href="/user/signout">Sign Out</a></li>
+                    {{else}}
+                        <li><a href="/user/signin">Sign In</a></li>
+                        <li><a href="/user/signup">Sign Up</a></li>
+                    {{/if}}
+                </ul>
+                </div>
+
+            </nav>
+        </header> 
+        
         <main class= "container">
             
              {{{body}}}
@@ -36,9 +50,21 @@
         </main> 
         {{!-- end .container --}}
        
-        <footer>
-                <p>share image application</p>
+         <footer class="page-footer">
+          
+            <div class="row">
+              <div class="col l6 s12 ">
+                <p class="white-text text-lighten-4 text-footer">Credit: All Images used in this website are from <a href="https://www.unsplash.com" class="credit">Unsplash website</a></p>
+              </div>
+               
+        
+            </div>
+            <div class="footer-copyright">
+           
+                <p>Project2</p>
+            </div>
         </footer>
+            
 
 
         

@@ -54,7 +54,7 @@ module.exports = {
     // POST sign up
     createSignup: (req, res) => {
         const signupStrategy = passport.authenticate('local-signup', {
-            successRedirect: '/',
+            successRedirect: 'index',
             failureRedirect: 'signup',
             failureFlash: true
         }); // end signup

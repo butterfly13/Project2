@@ -1,0 +1,69 @@
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /* background-image: url('https://source.unsplash.com/72K-m8jTotA') */
+    background-image: url('https://source.unsplash.com/Kt6AoMxyFPw');
+    
+    
+  }
+
+  main {
+    flex: 1 0 auto;
+    
+  }
+
+  
+
+ 
+
+  nav{
+      padding-left: 30px;
+      padding-right: 30px;
+  }
+
+  /* .card-content img {
+      width: 290px;
+      height: 300px;
+      position: relative;
+     
+  } */
+
+
+/* 
+  div.card-content {
+      width: 33%;
+     
+  } */
+
+  /* .display-author {
+      padding-top: 40px;
+  } */
+
+  div.card {
+      padding: 0;
+  }
+
+  header nav, footer.page-footer {
+      background-color: #b3b2b3;
+      
+  }
+
+  
+
+  footer .white-text {
+      padding-left: 20px;
+    
+  }
+.page-footer .text-footer {
+    padding-top: 0;
+}
+  .footer-copyright p{
+    padding-left: 30px;
+    padding-top: 0;
+  }
+
+  .credit {
+      color: white;
+  }

@@ -32,29 +32,34 @@ module.exports = {
   },
   // // POST form 
   create: (req, res) => {
-
-    // const url = req.body.url
-    // const desc = req.body.desc
-    
+    // console.log("====================")
+    // console.log('before upload image')
+    // console.log(res.locals.currentUser)
+    // console.log("====================")
+    const url = req.body.url
+    const desc = req.body.desc
+    // console.log('URL')
+    // console.log(url)
+    const author = res.locals.currentUser
     // Create new image
     Image.create({
-      image: req.body.url.image,
-      description: req.body.desc.description,
-      author: req.user_id
+      image: url,
+      description: desc,
+      author: author._id
     })
     .then(image => {
-      req.user.images.push(image);
+      req.user.images.push(image._id);
       req.user.save(err => {
-        //res.redirect('./index')
-        console.log('from image controller')
-        //console.log(author)
-        res.render('image/index')
+
+        res.redirect(`/user/index`)
       })
     })
+    
    // console.log(url)
    // res.render('user/index')
   },
 
 
 }
+
 

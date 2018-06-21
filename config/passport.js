@@ -45,23 +45,23 @@ module.exports = function (passport) {
             newUser.username = username
            //newUser.email = email
             newUser.password = newUser.encrypt(password)
-            
-            User.create(newUser, function(err, user){
-              if(err) throw err
-              console.log(user)
-            })
-
-            // newUser.save(function(err){
+           
+            // User.create(newUser, function(err, user){
             //   if(err) throw err
-            //   return callback(null, newUser)
-            // }) // end newUser.save
+            //   console.log(user)
+            // })
+
+            newUser.save(function(err){
+              if(err) throw err
+              return callback(null, newUser)
+            }) // end newUser.save
             
           } // end if user with this username
         }) // end findOne
        
       }
     )
-
+   
   )
   // Sign In
   passport.use(
