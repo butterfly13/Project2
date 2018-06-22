@@ -34,7 +34,7 @@ User.find({}).remove(() => {
         ])
       //})
         .then(() => {
-            user.save(err => console.err(err));
+            user.save(err => console.log(err));
           }); // end save(34)
 
       }); // end user then(14)
