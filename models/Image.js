@@ -19,6 +19,10 @@ const Comment = new Schema({
 const Image = new Schema({
     image: String,
     description: String,
+    dateCreated: {
+        type: Date,
+        default: Date.now()
+    },
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'

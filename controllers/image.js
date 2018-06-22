@@ -8,7 +8,7 @@ module.exports = {
   index: (req, res) => {
     Image.find({})
       .limit(10)
-      .sort({$natural: -1})
+      .sort({dateCreated: -1})
       //.sort({ dateCreated: -1 })
       // .limit(10)
       .populate('author')
@@ -17,7 +17,6 @@ module.exports = {
         res.render('image/index', { images })
       })
 
-    // res.render('image/index');
   },
   // show single image
   show: (req, res) => {
@@ -34,10 +33,6 @@ module.exports = {
   },
   // // POST form 
   create: (req, res) => {
-    // console.log("====================")
-    // console.log('before upload image')
-    // console.log(res.locals.currentUser)
-    // console.log("====================")
     const url = req.body.url
     const desc = req.body.desc
     const author = res.locals.currentUser
@@ -55,9 +50,7 @@ module.exports = {
         
       })
     })
-    
-   // console.log(url)
-   // res.render('user/index')
+
   },
 
 

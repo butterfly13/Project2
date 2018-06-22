@@ -9,8 +9,8 @@ module.exports = {
         User.findOne({_id: req.params.id})
         .populate({
                 
-                        path: 'images'
-        //     //             // options: {dateCreated: -1}
+                        path: 'images',
+                        options: {dateCreated: -1}
     
                     
                 })
